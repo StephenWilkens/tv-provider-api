@@ -1,30 +1,27 @@
 "use strict";
 const { Model } = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
-  class network extends Model {
+  class package extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      network.hasMany(models.show, {
-        as: "shows",
-      });
-      network.belongsToMany(models.package, {
+      package.belongsToMany(models.network, {
         through: "package_networks",
       });
     }
   }
-  network.init(
+  package.init(
     {
       title: DataTypes.STRING,
+      price: DataTypes.DECIMAL,
     },
     {
       sequelize,
-      modelName: "network",
+      modelName: "package",
     }
   );
-  return network;
+  return package;
 };
