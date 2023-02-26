@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   package_networks.init({
-    providerPackageId: DataTypes.INTEGER,
-    networkId: DataTypes.INTEGER
+    provider_package_id: DataTypes.INTEGER,
+    network_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'package_networks',

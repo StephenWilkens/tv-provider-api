@@ -1,5 +1,6 @@
 "use strict";
-const { Model } = require("sequelize");
+const { Model, DataTypes, Sequelize } = require("sequelize");
+const sequelize = new Sequelize('');
 
 module.exports = (sequelize, DataTypes) => {
   class network extends Model {
@@ -28,3 +29,5 @@ module.exports = (sequelize, DataTypes) => {
   );
   return network;
 };
+
+// module.exports = (sequelize, DataTypes)
