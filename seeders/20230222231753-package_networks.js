@@ -7,135 +7,135 @@ module.exports = {
       "package_networks",
       [
         {
-          packageId: 1,
+          providerPackageId: 1,
           networkId: 1,
         },
         {
-          packageId: 1,
+          providerPackageId: 1,
           networkId: 4,
         },
         {
-          packageId: 1,
+          providerPackageId: 1,
           networkId: 5,
         },
         {
-          packageId: 1,
+          providerPackageId: 1,
           networkId: 8,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 1,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 2,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 3,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 4,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 5,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 6,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 7,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 8,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 9,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 10,
         },
         {
-          packageId: 2,
+          providerPackageId: 2,
           networkId: 11,
         },
         {
-          packageId: 3,
+          providerPackageId: 3,
           networkId: 4,
         },
         {
-          packageId: 3,
+          providerPackageId: 3,
           networkId: 5,
         },
         {
-          packageId: 3,
+          providerPackageId: 3,
           networkId: 1,
         },
         {
-          packageId: 3,
+          providerPackageId: 3,
           networkId: 8,
         },
         {
-          packageId: 3,
+          providerPackageId: 3,
           networkId: 2,
         },
         {
-          packageId: 3,
+          providerPackageId: 3,
           networkId: 6,
         },
         {
-          packageId: 3,
+          providerPackageId: 3,
           networkId: 9,
         },
         {
-          packageId: 3,
+          providerPackageId: 3,
           networkId: 3,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 1,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 2,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 3,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 4,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 5,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 6,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 7,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 8,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 9,
         },
         {
-          packageId: 4,
+          providerPackageId: 4,
           networkId: 10,
         },
       ],

@@ -3,7 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('package_networks', {
-      packageId: {
+      providerPackageId: {
         type: Sequelize.INTEGER
       },
       networkId: {

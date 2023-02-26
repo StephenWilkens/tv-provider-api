@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       network.hasMany(models.show, {
         as: "shows",
       });
-      network.belongsToMany(models.package, {
+      network.belongsToMany(models.providerPackage, {
         through: "package_networks",
       });
     }
