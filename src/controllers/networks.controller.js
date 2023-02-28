@@ -1,8 +1,8 @@
-const { Network } = require("../../models");
+const { network } = require("../../models");
 
 const getAllNetworks = async (req, res) => {
   try {
-    const networks = await Network.findAll();
+    const networks = await network.findAll();
     return res.status(201).json({
       networks,
     });
