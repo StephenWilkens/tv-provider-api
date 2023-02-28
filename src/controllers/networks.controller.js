@@ -11,6 +11,12 @@ const getAllNetworks = async (req, res) => {
   }
 };
 
+// const getNetwork = async (req, res) => {
+//   try {
+//     const {id} = req.params
+//     const 
+//   }
+// }
 module.exports = {
   getAllNetworks,
 };

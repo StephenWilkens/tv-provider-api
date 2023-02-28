@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon src/server.js",
     "db:reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --testTimeout=10000",
     "pretest": "cross-env NODE_ENV=test npm run db:reset",
     "db:create:test": "cross-env NODE_ENV=test sequelize db:create"
   },
