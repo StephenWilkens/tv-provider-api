@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       show.belongsTo(models.network, {
         foreignKey: "networkId",
-        onDelete: "CASCADE",
       });
     }
   }
@@ -18,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       title: DataTypes.STRING,
       imdbRating: DataTypes.DECIMAL,
-      networkId: DataTypes.INTEGER,
+      // networkId: DataTypes.INTEGER,
     },
     {
       sequelize,

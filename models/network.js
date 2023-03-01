@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       network.hasMany(models.show, {
-        as: "shows",
+        foreignKey: "networkId"
       });
       network.belongsToMany(models.providerPackage, {
         through: "package_networks",
