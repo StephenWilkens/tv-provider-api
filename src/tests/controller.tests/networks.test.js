@@ -1,5 +1,3 @@
-// "pretest": "cross-env NODE_ENV=test npm run db:reset",
-
 const request = require("supertest");
 const app = require("../../app");
 
