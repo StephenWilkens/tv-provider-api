@@ -3,7 +3,7 @@ const { network } = require("../../models");
 const getAllNetworks = async (req, res) => {
   try {
     const networks = await network.findAll();
-    return res.status(201).json({
+    return res.status(200).json({
       networks,
     });
   } catch (err) {
@@ -17,7 +17,7 @@ const getNetwork = async (req, res) => {
     const foundNetwork = await network.findOne({
       where: { id: id },
     });
-    return res.status(201).json({
+    return res.status(200).json({
       foundNetwork,
     });
   } catch (err) {
