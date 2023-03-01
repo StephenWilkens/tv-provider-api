@@ -41,4 +41,24 @@ describe("Networks controller", () => {
       });
     });
   });
+  describe("updateNetwork", () => {
+    describe("happy path", () => {
+      it("should successfully update a network", async () => {
+        const res = await request(app).put("/api/v1/networks/1").send({
+          title: "Dexter's Lab 24/7",
+        });
+        expect(res.statusCode).toEqual(200);
+        expect(res.body).toHaveProperty("network");
+        expect(res.body.network.title).toBe("Dexter's Lab 24/7");
+      });
+    });
+  });
+  describe("deleteUser", () => {
+    describe("happy path", () => {
+      it("should destroy the given network", async () => {
+        const res = await request(app).del("/api/v1/networks/1");
+        expect(res.statusCode).toBe(204);
+      });
+    });
+  });
 });
