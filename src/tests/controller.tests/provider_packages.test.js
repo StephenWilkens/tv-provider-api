@@ -33,9 +33,7 @@ describe("Provider_packages controller", () => {
   describe("createPackage", () => {
     describe("happy path", () => {
       it("should successfully create a package", async () => {
-        const res = await (
-          await request(app).post("/api/v1/packages")
-        ).setEncoding({
+        const res = await request(app).post("/api/v1/packages").send({
           title: "The Works",
           price: 1000000,
         });

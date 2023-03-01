@@ -13,7 +13,7 @@ const getAllPackages = async (req, res) => {
 
 const getPackage = async (req, res) => {
   try {
-    const { id } = req.params
+    const { id } = req.params;
     const foundPackage = await provider_package.findOne({
       where: { id: id },
     });
@@ -25,7 +25,19 @@ const getPackage = async (req, res) => {
   }
 };
 
+const createPackage = async (req, res) => {
+  try {
+    const newPackage = await provider_package.create(req.body);
+    return res.status(201).json({
+      newPackage,
+    });
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
   getAllPackages,
   getPackage,
+  createPackage,
 };
