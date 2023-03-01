@@ -21,12 +21,26 @@ describe("Provider_packages controller", () => {
       it("should return the correct package", async () => {
         const res = await request(app).get("/api/v1/packages/1");
         expect(res.statusCode).toEqual(200);
-        expect(res.body).toHaveProperty("package");
-        expect(res.body.package).toHaveProperty("id");
-        expect(res.body.package).toHaveProperty("title");
-        expect(res.body.package).toHaveProperty("price");
-        expect(res.body.package).toHaveProperty("createAt");
-        expect(res.body.package).toHaveProperty("updatedAt");
+        expect(res.body).toHaveProperty("foundPackage");
+        expect(res.body.foundPackage).toHaveProperty("id");
+        expect(res.body.foundPackage).toHaveProperty("title");
+        expect(res.body.foundPackage).toHaveProperty("price");
+        expect(res.body.foundPackage).toHaveProperty("createdAt");
+        expect(res.body.foundPackage).toHaveProperty("updatedAt");
+      });
+    });
+  });
+  describe("createPackage", () => {
+    describe("happy path", () => {
+      it("should successfully create a package", async () => {
+        const res = await (
+          await request(app).post("/api/v1/packages")
+        ).setEncoding({
+          title: "The Works",
+          price: 1000000,
+        });
+        expect(res.statusCode).toEqual(201);
+        expect(res.body).toHaveProperty("newPackage");
       });
     });
   });
