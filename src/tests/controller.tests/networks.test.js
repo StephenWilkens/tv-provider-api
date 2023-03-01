@@ -17,17 +17,17 @@ describe("Networks controller", () => {
       })
     });
   });
-  // describe("getNetwork", () => {
-  //   describe("happy path", () => {
-  //     it('should return the correct network', async () => {
-  //       const res = await request(app).get("/api/v1/networks/1")
-  //       expect(res.statusCode).toEqual(201)
-  //       expect(res.body).toHaveProperty('network')
-  //       expect(res.body.network).toHaveProperty('id')
-  //       expect(res.body.network).toHaveProperty('title')
-  //       expect(res.body.network).toHaveProperty('createdAt')
-  //       expect(res.body.network).toHaveProperty('updatedAt')
-  //     })
-  //   })
-  // })
+  describe("getNetwork", () => {
+    describe("happy path", () => {
+      it('should return the correct network', async () => {
+        const res = await request(app).get("/api/v1/networks/1")
+        expect(res.statusCode).toEqual(201)
+        expect(res.body).toHaveProperty('foundNetwork')
+        expect(res.body.foundNetwork).toHaveProperty('id')
+        expect(res.body.foundNetwork).toHaveProperty('title')
+        expect(res.body.foundNetwork).toHaveProperty('createdAt')
+        expect(res.body.foundNetwork).toHaveProperty('updatedAt')
+      })
+    })
+  })
 });

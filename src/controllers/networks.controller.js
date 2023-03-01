@@ -11,12 +11,21 @@ const getAllNetworks = async (req, res) => {
   }
 };
 
-// const getNetwork = async (req, res) => {
-//   try {
-//     const {id} = req.params
-//     const 
-//   }
-// }
+const getNetwork = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const foundNetwork = await network.findOne({
+      where: { id: id },
+    });
+    return res.status(201).json({
+      foundNetwork,
+    });
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
   getAllNetworks,
+  getNetwork,
 };
