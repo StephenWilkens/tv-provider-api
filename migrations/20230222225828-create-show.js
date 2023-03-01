@@ -22,6 +22,7 @@ module.exports = {
           model: "networks",
           key: "id",
         },
+        onDelete: "CASCADE",
       },
       createdAt: {
         allowNull: false,
