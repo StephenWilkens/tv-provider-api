@@ -13,5 +13,6 @@ router.get("/packages", packagesController.getAllPackages);
 router.get("/packages/:id", packagesController.getPackage);
 router.post("/packages", packagesController.createPackage);
 router.put("/packages/:id", packagesController.updatePackage);
+router.delete("/packages/:id", packagesController.deletePackage);
 
 module.exports = router;

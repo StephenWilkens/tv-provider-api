@@ -1,4 +1,5 @@
 const request = require("supertest");
+const provider_package = require("../../../models/provider_package");
 const app = require("../../app");
 
 describe("Provider_packages controller", () => {
@@ -53,6 +54,14 @@ describe("Provider_packages controller", () => {
         expect(res.body).toHaveProperty("provider_package");
         expect(res.body.provider_package.title).toBe("Primo Package");
         expect(res.body.provider_package.price).toBe("2000000");
+      });
+    });
+  });
+  describe("deletePackage", () => {
+    describe("happy path", () => {
+      it("should delete the given package", async () => {
+        const res = await request(app).del("/api/v1/packages/1");
+        expect(res.statusCode).toBe(204);
       });
     });
   });

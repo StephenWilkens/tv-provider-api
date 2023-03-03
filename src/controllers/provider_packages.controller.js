@@ -43,7 +43,9 @@ const updatePackage = async (req, res) => {
       where: { id: id },
     });
     if (updated) {
-      const updatedPackage = await provider_package.findOne({ where: { id: id } });
+      const updatedPackage = await provider_package.findOne({
+        where: { id: id },
+      });
       return res.status(200).json({ provider_package: updatedPackage });
     }
     throw new Error("Package not found");
@@ -52,9 +54,25 @@ const updatePackage = async (req, res) => {
   }
 };
 
+const deletePackage = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedPackage = await provider_package.destroy({
+      where: { id: id },
+    });
+    if (deletePackage) {
+      return res.status(204).send("Package deleted");
+    }
+    throw new Error("Package not found");
+  } catch (err) {
+    return res.status(500).send({ error: err.message });
+  }
+};
+
 module.exports = {
   getAllPackages,
   getPackage,
   createPackage,
-  updatePackage
+  updatePackage,
+  deletePackage
 };
