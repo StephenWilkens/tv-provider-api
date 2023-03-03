@@ -15,4 +15,17 @@ describe("Shows controller", () => {
       });
     });
   });
+  describe("getShow", () => {
+    describe("happy path", () => {
+      it("should retieve a show by its ID", async () => {
+        const res = await request(app).get("/shows/1");
+        expect(res.statusCode).toEqual(200);
+        expect(res.body).toHaveProperty("id");
+        expect(res.body).toHaveProperty("title");
+        expect(res.body).toHaveProperty("imdbRating");
+        expect(res.body).toHaveProperty("createdAt");
+        expect(res.body).toHaveProperty("updatedAt");
+      });
+    });
+  });
 });
