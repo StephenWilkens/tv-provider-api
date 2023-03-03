@@ -33,11 +33,11 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("package_networks", {
-      provider_package_id: {
+      providerPackageId: {
         type: Sequelize.INTEGER,
         primaryKey: true,
       },
-      network_id: {
+      networkId: {
         type: Sequelize.INTEGER,
         primaryKey: true,
       },

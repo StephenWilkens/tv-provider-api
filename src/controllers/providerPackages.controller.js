@@ -1,8 +1,9 @@
-const { provider_package } = require("../../models");
+const { providerPackage } = require("../../models");
+const { network } = require("../../models")
 
 const getAllPackages = async (req, res) => {
   try {
-    const packages = await provider_package.findAll();
+    const packages = await providerPackage.findAll();
     return res.status(200).json({
       packages,
     });
@@ -14,9 +15,18 @@ const getAllPackages = async (req, res) => {
 const getPackage = async (req, res) => {
   try {
     const { id } = req.params;
-    const foundPackage = await provider_package.findOne({
-      where: { id: id },
-    });
+    const foundPackage = await providerPackage.findByPk(id, {
+      include: [
+        {
+          model: network,
+          as: "networks",
+          attributes: ["id", "title"],
+          through: {
+            attributes: [],
+          },
+        },
+      ],
+    })
     return res.status(200).json({
       foundPackage,
     });
@@ -24,10 +34,23 @@ const getPackage = async (req, res) => {
     return res.status(500).json({ error: err.message });
   }
 };
+// const getPackage = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const foundPackage = await providerPackage.findOne({
+//       where: { id: id },
+//     });
+//     return res.status(200).json({
+//       foundPackage,
+//     });
+//   } catch (err) {
+//     return res.status(500).json({ error: err.message });
+//   }
+// };
 
 const createPackage = async (req, res) => {
   try {
-    const newPackage = await provider_package.create(req.body);
+    const newPackage = await providerPackage.create(req.body);
     return res.status(201).json({
       newPackage,
     });
@@ -39,14 +62,14 @@ const createPackage = async (req, res) => {
 const updatePackage = async (req, res) => {
   try {
     const { id } = req.params;
-    const [updated] = await provider_package.update(req.body, {
+    const [updated] = await providerPackage.update(req.body, {
       where: { id: id },
     });
     if (updated) {
-      const updatedPackage = await provider_package.findOne({
+      const updatedPackage = await providerPackage.findOne({
         where: { id: id },
       });
-      return res.status(200).json({ provider_package: updatedPackage });
+      return res.status(200).json({ providerPackage: updatedPackage });
     }
     throw new Error("Package not found");
   } catch (err) {
@@ -57,7 +80,7 @@ const updatePackage = async (req, res) => {
 const deletePackage = async (req, res) => {
   try {
     const { id } = req.params;
-    const deletedPackage = await provider_package.destroy({
+    const deletedPackage = await providerPackage.destroy({
       where: { id: id },
     });
     if (deletePackage) {
