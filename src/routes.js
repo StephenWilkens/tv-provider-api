@@ -12,5 +12,6 @@ router.delete("/networks/:id", networksController.deleteNetwork);
 router.get("/packages", packagesController.getAllPackages);
 router.get("/packages/:id", packagesController.getPackage);
 router.post("/packages", packagesController.createPackage);
+router.put("/packages/:id", packagesController.updatePackage);
 
 module.exports = router;

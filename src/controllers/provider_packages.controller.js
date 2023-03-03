@@ -36,8 +36,25 @@ const createPackage = async (req, res) => {
   }
 };
 
+const updatePackage = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const [updated] = await provider_package.update(req.body, {
+      where: { id: id },
+    });
+    if (updated) {
+      const updatedPackage = await provider_package.findOne({ where: { id: id } });
+      return res.status(200).json({ provider_package: updatedPackage });
+    }
+    throw new Error("Package not found");
+  } catch (err) {
+    return res.status(500).send(err.message);
+  }
+};
+
 module.exports = {
   getAllPackages,
   getPackage,
   createPackage,
+  updatePackage
 };
