@@ -279,44 +279,8 @@ Example response:
 }
 ```
 
-### Get Shows by Network
-[GET] `http//:localhost:3000/api/v1/shows/networks/:networkId`
-
-Example response:
-
-``` javascript
-[
-    {
-        "id": 146,
-        "title": "A Little Late With Lilly Singh",
-        "imdbRating": "1.5",
-        "createdAt": "2023-01-24T21:03:27.693Z",
-        "updatedAt": "2023-01-24T21:03:52.186Z",
-        "networkId": 167
-    }
-]
-```
-
-### Get Shows by Package
-[GET] `http//:localhost:3000/api/v1/shows/packages/:packageId`
-
-Example response:
-
-``` javascript
-[
-    {
-        "id": 157,
-        "title": "Riverdale",
-        "imdbRating": "6.8",
-        "createdAt": "2023-01-24T21:03:27.961Z",
-        "updatedAt": "2023-01-24T21:03:52.381Z",
-        "networkId": 168
-    }
-]
-```
-
 ### Create a Show
-[POST] `http//:localhost:3000/api/v1/shows`
+[POST] `http//:localhost:3000/api/v1/networks/:networkId/shows`
 
 Example body:
 ``` javascript

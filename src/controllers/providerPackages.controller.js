@@ -34,19 +34,6 @@ const getPackage = async (req, res) => {
     return res.status(500).json({ error: err.message });
   }
 };
-// const getPackage = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const foundPackage = await providerPackage.findOne({
-//       where: { id: id },
-//     });
-//     return res.status(200).json({
-//       foundPackage,
-//     });
-//   } catch (err) {
-//     return res.status(500).json({ error: err.message });
-//   }
-// };
 
 const createPackage = async (req, res) => {
   try {
