@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       network.hasMany(models.show, {
         foreignKey: "networkId"
       });
-      network.belongsToMany(models.providerPackage, {
+      network.belongsToMany(models.provider_package, {
         through: "package_networks",
       });
     }
