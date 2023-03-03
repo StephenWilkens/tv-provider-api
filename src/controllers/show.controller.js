@@ -41,8 +41,25 @@ const createShow = async (req, res) => {
   }
 };
 
+const updateShow = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const [updated] = await show.update(req.body, {
+      where: { id: id },
+    });
+    if (updated) {
+      const updatedShow = await show.findOne({ where: { id: id } });
+      return res.status(200).json({ show: updatedShow });
+    }
+    throw new Error("Show not found");
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
   getAllShows,
   getShow,
-  createShow
+  createShow,
+  updateShow,
 };

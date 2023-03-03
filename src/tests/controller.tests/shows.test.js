@@ -53,7 +53,7 @@ describe("Shows controller", () => {
   describe("updateShow", () => {
     describe("happy path", () => {
       it("should update the given show", async () => {
-        const res = await request(app).put("/shows/1").send({
+        const res = await request(app).put("/api/v1/shows/1").send({
           title: "Reading Rainbow",
           imdbRating: 10,
         });
