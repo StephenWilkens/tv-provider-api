@@ -8,10 +8,10 @@ describe("Shows controller", () => {
         const res = await request(app).get("/api/v1/shows");
         expect(res.statusCode).toEqual(200);
         expect(res.body).toHaveProperty("shows");
-        expect(res.body.shows[0].toHaveProperty("title"));
-        expect(res.body.shows[0].toHaveProperty("imdbRating"));
-        expect(res.body.shows[0].toHaveProperty("createdAt"));
-        expect(res.body.shows[0].toHaveProperty("updatedAt"));
+        expect(res.body.shows[0]).toHaveProperty("title");
+        expect(res.body.shows[0]).toHaveProperty("imdbRating");
+        expect(res.body.shows[0]).toHaveProperty("createdAt");
+        expect(res.body.shows[0]).toHaveProperty("updatedAt");
       });
     });
   });

@@ -2,6 +2,7 @@ const { Router } = require("express");
 const router = Router();
 const networksController = require("./controllers/networks.controller");
 const packagesController = require("./controllers/provider_packages.controller");
+const showsController = require("./controllers/show.controller");
 
 router.get("/networks", networksController.getAllNetworks);
 router.get("/networks/:id", networksController.getNetwork);
@@ -14,5 +15,7 @@ router.get("/packages/:id", packagesController.getPackage);
 router.post("/packages", packagesController.createPackage);
 router.put("/packages/:id", packagesController.updatePackage);
 router.delete("/packages/:id", packagesController.deletePackage);
+
+router.get("/shows", showsController.getAllShows);
 
 module.exports = router;
