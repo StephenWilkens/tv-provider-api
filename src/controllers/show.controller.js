@@ -57,9 +57,25 @@ const updateShow = async (req, res) => {
   }
 };
 
+const deleteShow = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedShow = show.destroy({
+      where: { id: id },
+    });
+    if (deleteShow) {
+      return res.status(204).send("Show deleted");
+    }
+    throw new Error("Show not found");
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
   getAllShows,
   getShow,
   createShow,
   updateShow,
+  deleteShow,
 };
