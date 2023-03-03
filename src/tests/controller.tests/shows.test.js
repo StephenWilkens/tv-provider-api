@@ -66,4 +66,12 @@ describe("Shows controller", () => {
       });
     });
   });
+  describe("deleteShow", () => {
+    describe("happy path", () => {
+      it("should delete the given show", async () => {
+        const res = await request(app).del("/api/v1/shows/1");
+        expect(res.statusCode).toBe(204);
+      });
+    });
+  });
 });
