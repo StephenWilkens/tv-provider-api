@@ -1,4 +1,5 @@
 const { show } = require("../../models");
+const { network } = require("../../models");
 
 const getAllShows = async (req, res) => {
   try {
@@ -25,7 +26,23 @@ const getShow = async (req, res) => {
   }
 };
 
+const createShow = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const foundNetwork = await network.findOne({
+      where: { id: id },
+    });
+    const newShow = await foundNetwork.createShow(req.body);
+    return res.status(201).json({
+      newShow,
+    });
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
   getAllShows,
-  getShow
+  getShow,
+  createShow
 };

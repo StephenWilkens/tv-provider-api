@@ -31,25 +31,23 @@ describe("Shows controller", () => {
   });
   describe("createShow", () => {
     describe("happy path", () => {
-      it("should successfully create a show"),
-        async () => {
-          const res = await request(app).post("/api/v1/shows").send({
-            networkId: 1,
-            title: "Dexter's Lab",
-            imdbRating: 9.9,
-          });
-          expect(res.statusCode).toEqual(201);
-          expect(res.body).toHaveProperty("newShow");
-          expect(res.body.newShow).toHaveProperty("id");
-          expect(res.body.newShow).toHaveProperty("title");
-          expect(res.body.newShow).toHaveProperty("imdbRating");
-          expect(res.body.newShow).toHaveProperty("networkId");
-          expect(res.body.newShow).toHaveProperty("createdAt");
-          expect(res.body.newShow).toHaveProperty("updatedAt");
-          expect(res.body.newShow.title).toBe("Dexter's Lab");
-          expect(res.body.newShow.imdbRating).toBe("9.9");
-          expect(res.body.newShow.networkId).toBe("1");
-        };
+      it("should successfully create a show", async () => {
+        const res = await request(app).post("/api/v1/networks/1/shows").send({
+          title: "Dexter's Lab",
+          imdbRating: 9.9,
+        });
+        expect(res.statusCode).toEqual(201);
+        expect(res.body).toHaveProperty("newShow");
+        expect(res.body.newShow).toHaveProperty("id");
+        expect(res.body.newShow).toHaveProperty("title");
+        expect(res.body.newShow).toHaveProperty("imdbRating");
+        expect(res.body.newShow).toHaveProperty("networkId");
+        expect(res.body.newShow).toHaveProperty("createdAt");
+        expect(res.body.newShow).toHaveProperty("updatedAt");
+        expect(res.body.newShow.title).toBe("Dexter's Lab");
+        expect(res.body.newShow.imdbRating).toBe("9.9");
+        expect(res.body.newShow.networkId).toBe(1);
+      });
     });
   });
 });

@@ -18,5 +18,6 @@ router.delete("/packages/:id", packagesController.deletePackage);
 
 router.get("/shows", showsController.getAllShows);
 router.get("/shows/:id", showsController.getShow);
+router.post("/networks/:id/shows", showsController.createShow);
 
 module.exports = router;
