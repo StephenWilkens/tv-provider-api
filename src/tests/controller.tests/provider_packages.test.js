@@ -42,4 +42,20 @@ describe("Provider_packages controller", () => {
       });
     });
   });
+  describe("updatePackage", () => {
+    describe("happy path", () => {
+      it("should successfully update the title and price of a package", async () => {
+        const res = await (
+          await request(app).put("/api/v1/packages/1")
+        ).setEncoding({
+          title: "Primo Package",
+          price: 2000000,
+        });
+        expect(res.statusCode).toEqual(200);
+        expect(res.body).toHaveProperty("package");
+        expect(res.body.package.title).toBe("Primo Package");
+        expect(res.body.package.price).toBe(2000000);
+      });
+    });
+  });
 });
