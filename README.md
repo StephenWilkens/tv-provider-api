@@ -1,4 +1,4 @@
-# Charter Code Challenge API
+# TV Provider API
 
 ## About
 This is a REST API built with Javascript, utilizing the Node.js enviornment, the Express.js framework, and a PostgreSQL database. The database holds four tables representing packages, networks, shows, and the relationship between packages and networks. 
