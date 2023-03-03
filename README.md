@@ -44,6 +44,7 @@ This is a REST API built with Javascript, utilizing the Node.js enviornment, the
   - [Packages](##PACKAGES)
   - [Networks](##NETWORKS)
   - [Shows](##SHOWS)
+  - [TODOs](##TODO)
 
 ## PACKAGES
 
@@ -315,3 +316,11 @@ Example body:
 3. Select 'Import'.
 
 4. With your server running ($ npm start) you can use any of the provided requests. 
+
+# TODO
+
+* In depth happy path testing
+* Sad path testing
+* More relational requests
+* Hosting
+* CI/CD
