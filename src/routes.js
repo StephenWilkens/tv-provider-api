@@ -17,5 +17,6 @@ router.put("/packages/:id", packagesController.updatePackage);
 router.delete("/packages/:id", packagesController.deletePackage);
 
 router.get("/shows", showsController.getAllShows);
+router.get("/shows/:id", showsController.getShow);
 
 module.exports = router;
