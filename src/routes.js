@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const networksController = require("./controllers/networks.controller");
-const packagesController = require("./controllers/provider_packages.controller");
+const packagesController = require("./controllers/providerPackages.controller");
 const showsController = require("./controllers/show.controller");
 
 router.get("/networks", networksController.getAllNetworks);

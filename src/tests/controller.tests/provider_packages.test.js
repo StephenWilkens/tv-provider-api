@@ -1,8 +1,7 @@
 const request = require("supertest");
-const provider_package = require("../../../models/provider_package");
 const app = require("../../app");
 
-describe("Provider_packages controller", () => {
+describe("providerPackages controller", () => {
   describe("getAllPackages", () => {
     describe("happy path", () => {
       it("should return all packages", async () => {
@@ -51,9 +50,9 @@ describe("Provider_packages controller", () => {
           price: 2000000,
         });
         expect(res.statusCode).toEqual(200);
-        expect(res.body).toHaveProperty("provider_package");
-        expect(res.body.provider_package.title).toBe("Primo Package");
-        expect(res.body.provider_package.price).toBe("2000000");
+        expect(res.body).toHaveProperty("providerPackage");
+        expect(res.body.providerPackage.title).toBe("Primo Package");
+        expect(res.body.providerPackage.price).toBe("2000000");
       });
     });
   });
