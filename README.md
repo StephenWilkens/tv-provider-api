@@ -8,6 +8,7 @@ This is a REST API built with Javascript, utilizing the Node.js enviornment, the
 - [Setup](#SETUP)
 - [Endpoints](#ENDPOINTS)
 - [Postman Requests](#POSTMAN)
+- [TODOs](#TODO)
 
 ---
 
@@ -44,7 +45,7 @@ This is a REST API built with Javascript, utilizing the Node.js enviornment, the
   - [Packages](##PACKAGES)
   - [Networks](##NETWORKS)
   - [Shows](##SHOWS)
-  - [TODOs](##TODO)
+
 
 ## PACKAGES
 
