@@ -52,7 +52,7 @@ describe("Shows controller", () => {
   });
   describe("updateShow", () => {
     describe("happy path", () => {
-      it("should update the given show", async () => {
+      it("should update the given shows title and imdbRating", async () => {
         const res = await request(app).put("/api/v1/shows/1").send({
           title: "Reading Rainbow",
           imdbRating: 10,
@@ -63,6 +63,28 @@ describe("Shows controller", () => {
         expect(res.body.show).toHaveProperty("imdbRating");
         expect(res.body.show.title).toBe("Reading Rainbow");
         expect(res.body.show.imdbRating).toBe("10");
+      });
+      it("should update only the shows title", async () => {
+        const res = await await request(app).put("/api/v1/shows/1").send({
+          title: "Lavar is The Man",
+        });
+        expect(res.statusCode).toEqual(200);
+        expect(res.body).toHaveProperty("show");
+        expect(res.body.show).toHaveProperty("title");
+        expect(res.body.show).toHaveProperty("imdbRating");
+        expect(res.body.show.title).toBe("Lavar is The Man");
+        expect(res.body.show.imdbRating).toBe("10");
+      });
+      it("should update only the shows imdbRating", async () => {
+        const res = await await request(app).put("/api/v1/shows/1").send({
+          imdbRating: 11,
+        });
+        expect(res.statusCode).toEqual(200);
+        expect(res.body).toHaveProperty("show");
+        expect(res.body.show).toHaveProperty("title");
+        expect(res.body.show).toHaveProperty("imdbRating");
+        expect(res.body.show.title).toBe("Lavar is The Man");
+        expect(res.body.show.imdbRating).toBe("11");
       });
     });
   });
